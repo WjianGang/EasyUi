@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>layout.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <script type="text/javascript">
+  	function urlClick(){
+  		var getEx=$("#myTabs").tabs("exists","学生管理");
+  		if(getEx!=true){
+  			$("#myTabs").tabs("add",{
+	  		 	 title:'学生管理',
+		    	 closable:true,
+		    	 content:'<iframe frameborder=0 width="100%" height="100%" scrolling="no"  src="crud.html"></iframe>',
+  		    });
+  		}
+  		$("#myTabs").tabs("select","学生管理");
+  	}
+  </script>
+  
+  <body style="padding:1px;margin:1px">
+     <div class="easyui-layout" style="width:100%;height:100%;margin:0px">
+		<div data-options="region:'north'" style="height:18%">
+			<div style="height:82%">
+		       <img alt="" src="banner.png" >
+		    </div>
+		  	<div style="text-align: right;width:85%" ><a href="" style="color:white;size: 20px">安全退出</a></div>  
+		</div>
+		
+	
+		
+		<div data-options="region:'west',split:true" title="导航菜单" style="width:15%;">
+			<div class="easyui-accordion" style="width:100%;height:50%;">
+				<div title="权限管理"  style="overflow:auto;padding:10px;">
+					<h3 style="color:#0099FF;"></h3>
+					<a href="#" style="text-decoration: none;"><img alt="" src="themes/icons/man.png">用户管理 <br/></a>
+					<a href="javascript:urlClick()"  style="text-decoration: none;"><img alt="" 
+					src="themes/icons/cut.png" style="margin-top:5px">学生管理</a>
+				</div>
+				<div title="系统设置" style="padding:10px;">
+					
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center',iconCls:'icon-ok'">
+		  <div id="myTabs" class="easyui-tabs" style="width:100%;height:100%">
+		     <div title="欢迎使用" style="padding:10px" ></div>
+		  </div>
+		</div>
+	</div>
+  </body>
+</html>
